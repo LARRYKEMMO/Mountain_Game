@@ -1,0 +1,60 @@
+package com.mountain.game;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Random;
+import com.badlogic.gdx.math.Rectangle;
+
+public class rocks {
+
+	// ***************************************************************************************************************************************************************************************
+    // Class                   :    Rocks
+    //
+    // Class  parameters       :    none 
+    // 
+    // Method return           :    void
+    //
+    // Synopsis                :    This class has all methods, parameters relevant to the rocks in the game
+    //                              
+    // Modifications           :    
+    //                              Date           Developer              Notes
+    //                             ------         -----------            -------
+    //                            2022-11-17      LARRY KEMMO           Initial setup   
+    //                              Date           Developer              Notes
+    //                             ------         -----------            ------- 
+    //                            2022-11-17      LARRY KEMMO           Addition of side comments
+    //
+    // *****************************************************************************************************************************************************************************************
+
+	public Rectangle rockRectangle = new Rectangle();
+	public int rockXPosition;  // rect variable declaration
+    public int rockYPosition;  // rect variable declaration
+    private int Speed;     // Speed variable declaration
+    public Texture texture;   // texture variable declaration
+    private java.util.Random random;  // random variable declaration
+    private java.util.Random rand;    // rand variable declaration
+	
+	public rocks(Rectangle TempRectangle, int TempRockXPosition, int TempRockYPosition, int TempSpeed, Texture TempTexture) {
+		this.rockRectangle = TempRectangle;
+		this.rockRectangle.x = TempRockXPosition;
+		this.rockRectangle.y = TempRockYPosition;
+		this.Speed = TempSpeed;
+		this.texture = TempTexture;
+		this.random = new java.util.Random();
+		this.rand = new java.util.Random();
+	}
+	
+	public void update() {
+		rockRectangle.y -= Speed;
+		
+		if (rockRectangle.y < 0) {
+			rockRectangle.y = random.nextInt(900, 1000);
+			rockRectangle.x = rand.nextInt(0, 1100);
+		}
+		
+	}
+	
+	public void Draw(SpriteBatch batch, Texture TempTexture) {
+		batch.draw(TempTexture, rockRectangle.x, rockRectangle.y);
+	}
+}

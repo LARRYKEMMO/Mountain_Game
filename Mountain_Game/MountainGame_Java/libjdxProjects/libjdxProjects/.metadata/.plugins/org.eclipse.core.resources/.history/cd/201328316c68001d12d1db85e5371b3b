@@ -1,0 +1,204 @@
+package com.mountain.game;
+// List of imports
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Random;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.ScreenUtils;
+
+public class Game extends ApplicationAdapter {
+	private SpriteBatch batch; // batch data member declaration
+	private Texture background; // background data member declaration
+	Texture player;	// player data member declaration
+	public Rectangle PlayerRectangle;	// playerRectangle data member declaration
+	int PlayerSpeed = 5;	// PlayerSpeed data member declaration and instantiation to 5
+	private Texture rock; // rock data member declaration
+	private rocks Rock;	// Rock data member declaration
+	int rockXPos;	// rockXPos data member declaration
+	int rockYPos;	// rockYPos data member declaration
+	int rockSpeed;	// rockSpeed data member declaration
+	private Float Timer = 0f;	// Timer data member declaration and instantiation to 0
+	float Time = 0;	// Time data member declaration and instantiation 0
+	private Integer HighScore = 0;	// HighScore data member declaration and instantiation to 0
+	private static ArrayList<rocks>  rockArray= new ArrayList<rocks>(); // rockArray data member declaration and instantiation
+	private BitmapFont EndFont;	// EndFont data member declaration
+	private BitmapFont WelcomeFont;	// WelcomeFont data member declaration
+	private BitmapFont ScoreFont;	// ScoreFont data member declaration
+	private int WelcomeFontXPos = 20;	// WelcomeFontXPos data member declaration
+	private int fontCounter = 0;	// fountCounter data member declaration
+    private java.util.Random random2;    // rand variable declaration
+    private java.util.Random random3;  // random variable declaration
+    boolean running = true;	// running data member declaration
+	
+    
+    @Override
+	public void create () {
+		
+    	// ***************************************************************************************************************************************************************************************
+        // Class                   :    create
+        //
+        // Class  parameters       :    None
+        // 
+        // Method return           :    void
+        //
+        // Synopsis                :    This class is responsible for parameter instantiation of player, screen, textures and rectangles
+        //                              
+        // Modifications           :    
+        //                              Date           Developer              Notes
+        //                             ------         -----------            -------
+        //                            2022-11-17      LARRY KEMMO           Initial setup   
+        //                              Date           Developer              Notes
+        //                             ------         -----------            ------- 
+        //                            2022-11-17      LARRY KEMMO           Addition of side comments
+        //
+        // *****************************************************************************************************************************************************************************************
+    	
+    	ReadFile();		// Calls ReadFile method
+    	batch = new SpriteBatch();	// batch data member instantiation 
+		background = new Texture("back.png");	// background data member instantiation
+		player = new Texture("Sasuke1.png");	// player object instantiation
+		EndFont = new BitmapFont();	// EndFont data member instantiation
+		EndFont.getData().setScale(5, 5);	// EndFont data member font resize (5, 5)
+		EndFont.setColor(Color.RED);	// EndFont data member Color instantiation
+		WelcomeFont = new BitmapFont();		// WelcomeFont data member instantiation
+		WelcomeFont.getData().setScale(3, 3);	// WelcomeFont data member font resize to (3, 3)
+		WelcomeFont.setColor(Color.BLACK);	// WelcomeFont data member Color instantiation
+		ScoreFont = new BitmapFont();	// ScoreFont data member instantiation
+		ScoreFont.setColor(Color.BLACK);	// ScoreFont data member Color instantiation
+		PlayerRectangle = new Rectangle();	// PlayerRectangle data member instantiation
+		PlayerRectangle.x = 550;	// PlayerRectangle X-axis position instantiation
+		PlayerRectangle.y = 0;	// PlayerRectangle Y-axis position instantiation
+		PlayerRectangle.width = player.getWidth();	// PlayerRectangle width instantiation
+		PlayerRectangle.height = player.getHeight();	// PlayerRectangle height instantiation
+		rock = new Texture("asteroidR1.png");	// rock data member instantiation
+		java.util.Random random = new java.util.Random();	// random datam
+		java.util.Random random2 = new java.util.Random();
+		java.util.Random random3 = new java.util.Random();
+		int counter;
+		int RockLimit = 10;
+		
+		for(counter = 0; counter < RockLimit; counter ++) {	// for loop that ensures the production of 10 rocks 
+			rockXPos = random.nextInt(0, 1100);
+			rockYPos = random2.nextInt(900, 1000);
+			rockSpeed = random3.nextInt(4, 9);
+			Rock = new rocks(rockXPos, rockYPos, rockSpeed, rock);
+			rockArray.add(Rock);
+		}
+		
+	}
+
+	@Override
+	public void render () {
+		
+		// ***************************************************************************************************************************************************************************************
+        // Class                   :    render
+        //
+        // Class  parameters       :    gameTime
+        // 
+        // Method return           :    void
+        //
+        // Synopsis                :    This class takes care of all entity movement, collision handling and timer increment
+        //                              
+        // Modifications           :    
+        //                              Date           Developer              Notes
+        //                             ------         -----------            -------
+        //                            2022-11-17      LARRY KEMMO           Initial setup   
+        //                              Date           Developer              Notes
+        //                             ------         -----------            ------- 
+        //                            2022-11-17      LARRY KEMMO           Addition of side comments
+        //
+        // *****************************************************************************************************************************************************************************************
+
+		
+		ScreenUtils.clear(1, 0, 0, 1);
+		batch.begin();
+		batch.draw(background, 0, 0);
+		WelcomeFont.draw(batch, "Welcome To My Game ", WelcomeFontXPos, 790);
+		ScoreFont.draw(batch, "Your Score is " + Math.floor(Timer), 20, 740);
+		ScoreFont.draw(batch, "HighScore: " + HighScore, 20, 710);
+//		System.out.println(Math.floor(Timer));
+		batch.draw(player,PlayerRectangle.x, PlayerRectangle.y);
+		int counter;
+		for(counter = 0; counter < rockArray.size(); counter ++) {
+			rockArray.get(counter).Draw(batch, rock);
+		}
+		if(fontCounter > 0) {
+			EndFont.draw(batch, "GameOver !!! ", 400, 420);
+		}
+		
+		if(running) {
+			Time = Gdx.graphics.getDeltaTime();
+			Timer = Timer + (1 * Time);
+			WelcomeFontXPos += 2;
+			for(counter = 0; counter < rockArray.size(); counter ++) {
+				rockArray.get(counter).update();
+				if(rockArray.get(counter).rockRectangle.overlaps(PlayerRectangle) && fontCounter < 1) {
+					running = false;
+					fontCounter ++;
+					if(HighScore < Math.floor(Timer)) {
+						HighScore = (int) Math.floor(Timer);
+						WriteToFile();
+					}
+				}
+			}
+	
+			if(Gdx.input.isKeyPressed(Keys.RIGHT) && PlayerRectangle.x < Gdx.graphics.getBackBufferWidth() - 46) {
+				player = new Texture("SasukeR.png");
+				PlayerRectangle.x += PlayerSpeed;
+			}
+			else if(Gdx.input.isKeyPressed(Keys.LEFT) && PlayerRectangle.x > 0) {
+				player = new Texture("SasukeL.png");
+				PlayerRectangle.x -= PlayerSpeed;
+			}
+		}
+		batch.end();
+	}
+	
+	@Override
+	public void dispose () {
+		batch.dispose();
+		background.dispose();
+		player.dispose();
+		EndFont.dispose();
+	}
+	
+	public void WriteToFile() {
+		    try {
+		      FileWriter myWriter = new FileWriter("file1.txt");
+		      myWriter.write(HighScore.toString());
+		      myWriter.close();
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		  }
+	
+	public void ReadFile() {
+		    try {
+		      File myObj = new File("file1.txt");
+		      Scanner myReader = new Scanner(myObj);
+		      while (myReader.hasNextLine()) {
+		        String data = myReader.nextLine();
+		        HighScore = Integer.parseInt(data);
+		      }
+		      myReader.close();
+		    } catch (FileNotFoundException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		}
+}

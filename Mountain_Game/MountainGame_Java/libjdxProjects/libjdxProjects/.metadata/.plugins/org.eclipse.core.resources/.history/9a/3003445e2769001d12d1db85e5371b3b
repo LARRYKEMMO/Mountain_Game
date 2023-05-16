@@ -1,0 +1,288 @@
+package com.mountain.game;
+// List of imports
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Random;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.ScreenUtils;
+
+public class Game extends ApplicationAdapter {
+	
+	// ***************************************************************************************************************************************************************************************
+    // Class                   :    main
+    //
+    // Class  parameters       :    void
+    // 
+    // Method return           :    void
+    //
+    // Synopsis                :    This class calls all methods for the proper functioning of the game
+    //                              
+    // Modifications           :    
+    //                              Date           Developer              Notes
+    //                             ------         -----------            -------
+    //                            2022-11-17      LARRY KEMMO           Initial setup   
+    //                              Date           Developer              Notes
+    //                             ------         -----------            ------- 
+    //                            2022-11-17      LARRY KEMMO           Addition of side comments
+    //
+    // *****************************************************************************************************************************************************************************************
+    
+	
+	private SpriteBatch batch; // batch data member declaration
+	private Texture background; // background data member declaration
+	Texture player;	// player data member declaration
+	public Rectangle PlayerRectangle;	// playerRectangle data member declaration
+	int PlayerSpeed = 5;	// PlayerSpeed data member declaration and instantiation to 5
+	private Texture rock; // rock data member declaration
+	private rocks Rock;	// Rock data member declaration
+	int rockXPos;	// rockXPos data member declaration
+	int rockYPos;	// rockYPos data member declaration
+	int rockSpeed;	// rockSpeed data member declaration
+	private Float Timer = 0f;	// Timer data member declaration and instantiation to 0
+	float Time = 0;	// Time data member declaration and instantiation 0
+	private Integer HighScore = 0;	// HighScore data member declaration and instantiation to 0
+	private static ArrayList<rocks>  rockArray= new ArrayList<rocks>(); // rockArray data member declaration and instantiation
+	private BitmapFont EndFont;	// EndFont data member declaration
+	private BitmapFont WelcomeFont;	// WelcomeFont data member declaration
+	private BitmapFont ScoreFont;	// ScoreFont data member declaration
+	private int WelcomeFontXPos = 20;	// WelcomeFontXPos data member declaration
+	private int fontCounter = 0;	// fountCounter data member declaration
+    boolean running = true;	// running data member declaration
+	
+    
+    @Override
+	public void create () {
+		
+    	// ***************************************************************************************************************************************************************************************
+        // Class                   :    create
+        //
+        // Class  parameters       :    None
+        // 
+        // Method return           :    void
+        //
+        // Synopsis                :    This class is responsible for parameter instantiation of player, screen, textures and rectangles
+        //                              
+        // Modifications           :    
+        //                              Date           Developer              Notes
+        //                             ------         -----------            -------
+        //                            2022-11-17      LARRY KEMMO           Initial setup   
+        //                              Date           Developer              Notes
+        //                             ------         -----------            ------- 
+        //                            2022-11-17      LARRY KEMMO           Addition of side comments
+        //
+        // *****************************************************************************************************************************************************************************************
+    	
+    	ReadFile();		// Calls ReadFile method
+    	batch = new SpriteBatch();	// batch data member instantiation 
+		background = new Texture("back.png");	// background data member instantiation
+		player = new Texture("Sasuke1.png");	// player object instantiation
+		EndFont = new BitmapFont();	// EndFont data member instantiation
+		EndFont.getData().setScale(5, 5);	// EndFont data member font resize (5, 5)
+		EndFont.setColor(Color.RED);	// EndFont data member Color instantiation
+		WelcomeFont = new BitmapFont();		// WelcomeFont data member instantiation
+		WelcomeFont.getData().setScale(3, 3);	// WelcomeFont data member font resize to (3, 3)
+		WelcomeFont.setColor(Color.BLACK);	// WelcomeFont data member Color instantiation
+		ScoreFont = new BitmapFont();	// ScoreFont data member instantiation
+		ScoreFont.setColor(Color.BLACK);	// ScoreFont data member Color instantiation
+		PlayerRectangle = new Rectangle();	// PlayerRectangle data member instantiation
+		PlayerRectangle.x = 550;	// PlayerRectangle X-axis position instantiation
+		PlayerRectangle.y = 0;	// PlayerRectangle Y-axis position instantiation
+		PlayerRectangle.width = player.getWidth();	// PlayerRectangle width instantiation
+		PlayerRectangle.height = player.getHeight();	// PlayerRectangle height instantiation
+		rock = new Texture("asteroidR1.png");	// rock data member instantiation
+		java.util.Random random = new java.util.Random();	// random variable declaration and instantiation
+		java.util.Random random2 = new java.util.Random();	// random2 variable declaration and instantiation
+		java.util.Random random3 = new java.util.Random();	// random3 variable declaration and instantiation
+		int counter;	// counter variable declaration
+		int RockLimit = 10;	// RockLimit variable declaration and instantiation
+		
+		for(counter = 0; counter < RockLimit; counter ++) {	// for loop that ensures the production of 10 rocks 
+			rockXPos = random.nextInt(0, 1100);	// Assign random X position to rock
+			rockYPos = random2.nextInt(900, 1000);	// Assign random Y position to rock
+			rockSpeed = random3.nextInt(4, 9);	// Assign random speed to rock
+			Rock = new rocks(rockXPos, rockYPos, rockSpeed, rock);	// Creates rock and passes attributes
+			rockArray.add(Rock);	// Adds rock to Array
+		}	
+		
+	}
+
+	@Override
+	public void render () {
+		
+		// ***************************************************************************************************************************************************************************************
+        // Class                   :    render
+        //
+        // Class  parameters       :    gameTime
+        // 
+        // Method return           :    void
+        //
+        // Synopsis                :    This class takes care of all entity movement, collision handling and timer increment
+        //                              
+        // Modifications           :    
+        //                              Date           Developer              Notes
+        //                             ------         -----------            -------
+        //                            2022-11-17      LARRY KEMMO           Initial setup   
+        //                              Date           Developer              Notes
+        //                             ------         -----------            ------- 
+        //                            2022-11-17      LARRY KEMMO           Addition of side comments
+        //
+        // *****************************************************************************************************************************************************************************************
+
+		
+		ScreenUtils.clear(1, 0, 0, 1);
+		batch.begin();	// enables drawing
+		batch.draw(background, 0, 0);	// draws background
+		WelcomeFont.draw(batch, "Welcome To My Game ", WelcomeFontXPos, 790);	// Draws WelcomeFont
+		ScoreFont.draw(batch, "Your Score is " + Math.floor(Timer), 20, 740);	// Draws ScoreFont
+		ScoreFont.draw(batch, "HighScore: " + HighScore, 20, 710);	// Draws ScoreFont
+//		System.out.println(Math.floor(Timer));
+		batch.draw(player,PlayerRectangle.x, PlayerRectangle.y);	// draws player
+		int counter; // local variable declaration
+		
+		for(counter = 0; counter < rockArray.size(); counter ++) { // for loop that ensures every single rock in the rock array is drawn
+			rockArray.get(counter).Draw(batch, rock);	// Draws rock
+		}
+		if(fontCounter > 0) { // if conditional that ensures EndFont is drawn only when fontCounter > 0
+			EndFont.draw(batch, "GameOver !!! ", 400, 420);	// Draws EndFont
+		}
+		
+		if(running) { // Condition that checks if running variable is equal true
+			Time = Gdx.graphics.getDeltaTime(); // Time data member instantiation
+			Timer = Timer + (1 * Time);	// Timer data member instantiation
+			WelcomeFontXPos += 2;	// welcomeFontXpos increment by 2 
+			
+			for(counter = 0; counter < rockArray.size(); counter ++) {	// for loop that ensures the movement of the drawn rocks in the Y - Direction
+				rockArray.get(counter).update();	// updates rock at this counter
+				if(rockArray.get(counter).rockRectangle.overlaps(PlayerRectangle) && fontCounter < 1) { // conditional that checks for collision
+					running = false;	// sets running variable to false
+					fontCounter ++;	// increments fontCounter
+					if(HighScore < Math.floor(Timer)) {	// conditional that checks if highscore is greater than current timer
+						HighScore = (int) Math.floor(Timer);	// sets highscore to a new value
+						WriteToFile();	// calls write to File method
+					}
+				}
+			}
+	
+			if(Gdx.input.isKeyPressed(Keys.RIGHT) && PlayerRectangle.x < Gdx.graphics.getBackBufferWidth() - 46) {	// Condition that checks if player is still in bounds while moving in the right direction
+				player = new Texture("SasukeR.png"); // Assigns player a new texture
+				PlayerRectangle.x += PlayerSpeed;	// Moves right
+			}
+			else if(Gdx.input.isKeyPressed(Keys.LEFT) && PlayerRectangle.x > 0) {	// Condition that checks if player is still in bounds while moving in the left direction
+				player = new Texture("SasukeL.png");	// Assigns player a new texture
+				PlayerRectangle.x -= PlayerSpeed;	// Moves left
+			}
+		}
+		batch.end();	// Stops drawing
+	}
+	
+	@Override
+	public void dispose () {
+		
+		// ***************************************************************************************************************************************************************************************
+	    // Method                   :   dispose
+	    //
+	    // Class  parameters       :    void
+	    // 
+	    // Method return           :    void
+	    //
+	    // Synopsis                :    This class clears all sprites / textures in the game 
+	    //                              
+	    // Modifications           :    
+	    //                              Date           Developer              Notes
+	    //                             ------         -----------            -------
+	    //                            2022-11-17      LARRY KEMMO           Initial setup   
+	    //                              Date           Developer              Notes
+	    //                             ------         -----------            ------- 
+	    //                            2022-11-17      LARRY KEMMO           Addition of side comments
+	    //
+	    // *****************************************************************************************************************************************************************************************
+
+		
+		batch.dispose();	// clears batch
+		background.dispose();	// clears background
+		player.dispose();	// clears player
+		EndFont.dispose(); // clears EndFont
+	}
+	
+	public void WriteToFile() {
+		    
+		// ***************************************************************************************************************************************************************************************
+	    // Method                   :   WriteToFile
+	    //
+	    // Class  parameters       :    void
+	    // 
+	    // Method return           :    void
+	    //
+	    // Synopsis                :    This class calls all methods peculiar for file writing
+	    //                              
+	    // Modifications           :    
+	    //                              Date           Developer              Notes
+	    //                             ------         -----------            -------
+	    //                            2022-11-17      LARRY KEMMO           Initial setup   
+	    //                              Date           Developer              Notes
+	    //                             ------         -----------            ------- 
+	    //                            2022-11-17      LARRY KEMMO           Addition of side comments
+	    //
+	    // *****************************************************************************************************************************************************************************************
+
+		
+			try {
+		      FileWriter myWriter = new FileWriter("file1.txt");	// myWriter local variable declaration and instantiation
+		      myWriter.write(HighScore.toString()); // Writes highscore in created file
+		      myWriter.close();	// closes file
+		      System.out.println("Successfully wrote to the file.");
+		    } catch (IOException e) { // Exception that activates in an event that there is no file
+		      System.out.println("An error occurred.");	// system displays an error occured
+		      e.printStackTrace(); // prints a stack trace for this Throwable object on the standard error output stream
+		    }
+		  }
+	
+	public void ReadFile() {
+		    
+		// ***************************************************************************************************************************************************************************************
+	    // Method                   :   ReadFile
+	    //
+	    // Class  parameters       :    void
+	    // 
+	    // Method return           :    void
+	    //
+	    // Synopsis                :    This class calls all methods peculiar for file writing
+	    //                              
+	    // Modifications           :    
+	    //                              Date           Developer              Notes
+	    //                             ------         -----------            -------
+	    //                            2022-11-17      LARRY KEMMO           Initial setup   
+	    //                              Date           Developer              Notes
+	    //                             ------         -----------            ------- 
+	    //                            2022-11-17      LARRY KEMMO           Addition of side comments
+	    //
+	    // *****************************************************************************************************************************************************************************************
+
+		
+			try {
+		      File myObj = new File("file1.txt"); // myObj local variable declaration and instantiation
+		      Scanner myReader = new Scanner(myObj); // myReader local variable declaration and instantiation
+		      while (myReader.hasNextLine()) { // Loop that runs so far the file has content
+		        String data = myReader.nextLine(); // content of the file being stored in the data variable 
+		        HighScore = Integer.parseInt(data);	// HighScore data member being instantiated to data variable
+		      }
+		      myReader.close(); // closes reader
+		    } catch (FileNotFoundException e) {	// Exception that activates only when file has no content
+		      System.out.println("An error occurred."); // System displays An error occurred
+		      e.printStackTrace();	// prints a stack trace for this Throwable object on the standard error output stream
+		    }
+		}
+}

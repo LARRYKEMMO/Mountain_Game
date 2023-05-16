@@ -1,0 +1,116 @@
+package com.mountain.game;
+
+import java.util.ArrayList;
+
+import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Random;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.ScreenUtils;
+
+public class Game extends ApplicationAdapter {
+	SpriteBatch batch;
+	Texture background;
+	Texture player;
+	public Rectangle PlayerRectangle;
+	int PlayerSpeed = 5;
+	Texture rock;
+	rocks Rock;
+	int rockXPos;
+	int rockYPos;
+	int rockSpeed;
+	private float Timer = 0;
+	float Time = 0;
+	private static ArrayList<rocks>  rockArray= new ArrayList<rocks>();
+	private BitmapFont font;
+	private int fontCounter = 0;
+	private java.util.Random random;  // random variable declaration
+    private java.util.Random random2;    // rand variable declaration
+    private java.util.Random random3;  // random variable declaration
+    boolean running = true;
+	@Override
+	public void create () {
+		batch = new SpriteBatch();
+		background = new Texture("back.png");
+		player = new Texture("Sasuke1.png");
+		font = new BitmapFont();
+		font.setColor(Color.RED);
+		PlayerRectangle = new Rectangle();
+		PlayerRectangle.x = 550;
+		PlayerRectangle.y = 0;
+		PlayerRectangle.width = player.getWidth();
+		PlayerRectangle.height = player.getHeight();
+
+		rock = new Texture("asteroidR1.png");
+		random = new java.util.Random();
+		random2 = new java.util.Random();
+		random3 = new java.util.Random();
+		int counter;
+		for(counter = 0; counter < 10; counter ++) {
+			rockXPos = random.nextInt(0, 1100);
+			rockYPos = random2.nextInt(900, 1000);
+			rockSpeed = random3.nextInt(4, 9);
+			Rock = new rocks(rockXPos, rockYPos, rockSpeed, rock);
+			rockArray.add(Rock);
+		}
+		
+	}
+
+	@Override
+	public void render () {
+		ScreenUtils.clear(1, 0, 0, 1);
+		batch.begin();
+		batch.draw(background, 0, 0);
+		System.out.println(Math.floor(Timer));
+		batch.draw(player,PlayerRectangle.x, PlayerRectangle.y);
+		int counter;
+		for(counter = 0; counter < rockArray.size(); counter ++) {
+			rockArray.get(counter).Draw(batch, rock);
+		}
+		if(fontCounter > 0) {
+			font.draw(batch, "GameOver !!! ", 600, 600);
+		}
+		
+		if(running) {
+			Time = Gdx.graphics.getDeltaTime();
+			Timer = Timer + (1 * Time);
+			
+			for(counter = 0; counter < rockArray.size(); counter ++) {
+				rockArray.get(counter).update();
+				if(rockArray.get(counter).rockRectangle.overlaps(PlayerRectangle)) {
+					running = false;
+					System.out.println("GameOver");
+					if(fontCounter < 1) {
+						fontCounter ++;
+					}
+					
+				}
+			}
+			
+			if(Gdx.input.isKeyPressed(Keys.RIGHT) && PlayerRectangle.x < Gdx.graphics.getBackBufferWidth() - 46) {
+				player = new Texture("SasukeR.png");
+				PlayerRectangle.x += PlayerSpeed;
+			}
+			else if(Gdx.input.isKeyPressed(Keys.LEFT) && PlayerRectangle.x > 0) {
+				player = new Texture("SasukeL.png");
+				PlayerRectangle.x -= PlayerSpeed;
+			}
+		}
+		batch.end();
+		
+	}
+	
+	@Override
+	public void dispose () {
+		batch.dispose();
+		background.dispose();
+		player.dispose();
+		font.dispose();
+	}
+}

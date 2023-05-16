@@ -1,0 +1,42 @@
+-- VERSION_5
+-- START DISKCACHE_3
+C:\Users\larry\OneDrive - NBCC\NBCC COURSES\COMPARATIVE PROGRAMMING LANGUAGES\LARRY_KEMMO_COMPARATIVE_PROGRAMMING_ASSIGNMENT_2\MountainGame_Python\.metadata\.plugins\org.eclipse.core.resources\.projects\PygamePractice\com.python.pydev.analysis\v2_indexcache
+Game|1668978941836038000|C:\Users\larry\OneDrive - NBCC\NBCC COURSES\COMPARATIVE PROGRAMMING LANGUAGES\LARRY_KEMMO_COMPARATIVE_PROGRAMMING_ASSIGNMENT_2\MountainGame_Python\PygamePractice\Game.py
+rocks|1668704163598811700|C:\Users\larry\OneDrive - NBCC\NBCC COURSES\COMPARATIVE PROGRAMMING LANGUAGES\LARRY_KEMMO_COMPARATIVE_PROGRAMMING_ASSIGNMENT_2\MountainGame_Python\PygamePractice\rocks.py
+-- END DISKCACHE
+-- START DICTIONARY
+6
+2=Game
+4=rocks
+1=C:\Users\larry\OneDrive - NBCC\NBCC COURSES\COMPARATIVE PROGRAMMING LANGUAGES\LARRY_KEMMO_COMPARATIVE_PROGRAMMING_ASSIGNMENT_2\MountainGame_Python\PygamePractice\Game.py
+5=Rocks
+6=Rocks.__init__
+3=C:\Users\larry\OneDrive - NBCC\NBCC COURSES\COMPARATIVE PROGRAMMING LANGUAGES\LARRY_KEMMO_COMPARATIVE_PROGRAMMING_ASSIGNMENT_2\MountainGame_Python\PygamePractice\rocks.py
+-- END DICTIONARY
+-- START TREE 1
+17
+bac|1|background!1^26#1*19@
+clo|1|clock!1^20#1*19@
+cur|1|current_time!1^21#1*19@
+dra|1|draw!1^217#5*18@
+fil|2|fileReader!1^189#5*18@fileWriter!1^163#5*18@
+gam|1|gameon!1^36#1*19@
+hig|1|highScore!1^22#1*19@
+ini|1|init!1^66#5*18@
+mai|1|main!1^40#5*18@
+my_|3|my_font2!1^24#1*19@my_font3!1^25#1*19@my_font!1^23#1*19@
+pla|2|Player!1^27#1*19@PlayerRectangle!1^28#1*19@
+pre|1|pressed!1^38#1*19@
+roc|2|Rocks!3^12#7*33@rocklist!1^31#1*19@
+run|1|running!1^35#1*19@
+scr|1|screen!1^19#1*19@
+tex|3|text_gameover!1^32#1*19@textposx!1^34#1*19@text_welcome!1^33#1*19@
+upd|1|update!1^97#5*18@
+-- END TREE
+-- START TREE 2
+4
+__i|1|__init__!5&3^33#9*34@
+roc|2|rockrect!6&3^57#9*35@rockimage!6&3^56#9*35@
+spe|1|speed!6&3^55#9*35@
+upd|1|update!5&3^60#9*34@
+-- END TREE

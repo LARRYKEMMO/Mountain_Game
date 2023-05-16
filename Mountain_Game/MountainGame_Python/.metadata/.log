@@ -1,0 +1,572 @@
+!SESSION 2023-04-17 18:53:26.112 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2023-04-17 18:54:39.107
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-17 18:54:39.108
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@d5e3f55,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53df7e67,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-17 18:54:39.108
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d4b45b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d0b276e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-04-17 18:54:42.595
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\larry'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:55:06.029
+!MESSAGE Python not configured.
+!STACK 0
+org.python.pydev.core.NotConfiguredInterpreterException: Python not configured.
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getDefaultInterpreterInfo(AbstractInterpreterManager.java:247)
+	at org.python.pydev.plugin.nature.PythonNature.getProjectInterpreter(PythonNature.java:1364)
+	at org.python.pydev.plugin.nature.PythonPathNature.getVariableSubstitution(PythonPathNature.java:520)
+	at org.python.pydev.plugin.nature.PythonPathNature.getVariableSubstitution(PythonPathNature.java:503)
+	at org.python.pydev.core.docutils.StringSubstitution.<init>(StringSubstitution.java:57)
+	at org.python.pydev.plugin.nature.PythonPathNature.getOnlyProjectPythonPathStr(PythonPathNature.java:166)
+	at org.python.pydev.plugin.nature.PythonNature$RebuildPythonNatureModules.run(PythonNature.java:138)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:55:06.062
+!MESSAGE Info: Rebuilding internal caches: C:\Users\larry\OneDrive - NBCC\NBCC COURSES\COMPARATIVE PROGRAMMING LANGUAGES\LARRY_KEMMO_COMPARATIVE_PROGRAMMING_ASSIGNMENT_2\MountainGame_Python\.metadata\.plugins\org.eclipse.core.resources\.projects\PygamePractice\com.python.pydev.analysis\AdditionalProjectInterpreterInfo.pydevinfo (Expected error to be provided and got no error!)
+
+!ENTRY org.python.pydev.shared_core 1 1 2023-04-17 18:57:25.094
+!MESSAGE Information about process of adding new interpreter:
+- Opening dialog to request executable (or jar).
+
+!STACK 0
+java.lang.RuntimeException: Information about process of adding new interpreter:
+- Opening dialog to request executable (or jar).
+
+	at org.python.pydev.core.log.Log.logInfo(Log.java:45)
+	at org.python.pydev.ui.pythonpathconf.AbstractInterpreterEditor.getNewInputObject(AbstractInterpreterEditor.java:1051)
+	at org.python.copiedfromeclipsesrc.PythonListEditor.addPressed(PythonListEditor.java:159)
+	at org.python.copiedfromeclipsesrc.PythonListEditor$2.widgetSelected(PythonListEditor.java:339)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:252)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4060)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3632)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.python.pydev.plugin.ConfigureInterpreterJob.runInUIThread(ConfigureInterpreterJob.java:45)
+	at org.eclipse.ui.progress.UIJob.lambda$0(UIJob.java:95)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:185)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4035)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3635)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1154)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:57:42.003
+!MESSAGE Python not configured.
+!STACK 0
+org.python.pydev.core.NotConfiguredInterpreterException: Python not configured.
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getDefaultInterpreterInfo(AbstractInterpreterManager.java:247)
+	at org.python.pydev.plugin.nature.PythonNature.getProjectInterpreter(PythonNature.java:1364)
+	at org.python.pydev.plugin.nature.PythonNature.getVersionAndError(PythonNature.java:897)
+	at org.python.pydev.plugin.nature.PythonNature.getVersion(PythonNature.java:856)
+	at org.python.pydev.plugin.nature.PythonNature.getGrammarVersion(PythonNature.java:1221)
+	at org.python.pydev.editor.PyEdit.getGrammarVersion(PyEdit.java:1532)
+	at org.python.pydev.editor.PyEdit$7.getGrammarVersion(PyEdit.java:1561)
+	at org.python.pydev.parser.PyParser.reparseDocument(PyParser.java:293)
+	at org.python.pydev.parser.PyParser.reparseDocument(PyParser.java:1)
+	at org.python.pydev.shared_core.parsing.ParserScheduler.reparseDocument(ParserScheduler.java:162)
+	at org.python.pydev.shared_core.parsing.ParsingThread.run(ParsingThread.java:54)
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:57:42.111
+!MESSAGE Interpreter: Default not found
+!STACK 0
+org.python.pydev.core.MisconfigurationException: Interpreter: Default not found
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getInterpreterInfo(AbstractInterpreterManager.java:409)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getBuiltinMod(AbstractInterpreterManager.java:138)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getBuiltinCompletions(AbstractInterpreterManager.java:112)
+	at org.python.pydev.plugin.nature.PythonNature.getBuiltinCompletions(PythonNature.java:1170)
+	at org.python.pydev.ast.codecompletion.revisited.AbstractASTManager.getBuiltinComps(AbstractASTManager.java:1938)
+	at org.python.pydev.ast.codecompletion.revisited.AbstractASTManager.getBuiltinCompletions(AbstractASTManager.java:1926)
+	at com.python.pydev.analysis.scopeanalysis.AbstractScopeAnalyzerVisitor.<init>(AbstractScopeAnalyzerVisitor.java:158)
+	at com.python.pydev.analysis.visitors.OccurrencesVisitor.<init>(OccurrencesVisitor.java:106)
+	at com.python.pydev.analysis.OccurrencesAnalyzer.analyzeDocument(OccurrencesAnalyzer.java:54)
+	at com.python.pydev.analysis.additionalinfo.builders.AnalysisBuilderRunnable.doAnalysis(AnalysisBuilderRunnable.java:333)
+	at com.python.pydev.analysis.additionalinfo.builders.AbstractAnalysisBuilderRunnable.run(AbstractAnalysisBuilderRunnable.java:164)
+	at org.python.pydev.core.concurrency.RunnableAsJobsPoolThread$1.run(RunnableAsJobsPoolThread.java:140)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2023-04-17 18:57:52.174 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2023-04-17 18:57:59.587
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-17 18:57:59.587
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63f2d024,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b2dd35d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-17 18:57:59.587
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@405223e4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2d2133fd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:58:01.613
+!MESSAGE Python not configured.
+!STACK 0
+org.python.pydev.core.NotConfiguredInterpreterException: Python not configured.
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getDefaultInterpreterInfo(AbstractInterpreterManager.java:247)
+	at org.python.pydev.plugin.nature.PythonNature.getProjectInterpreter(PythonNature.java:1364)
+	at org.python.pydev.plugin.nature.PythonNature.getVersionAndError(PythonNature.java:897)
+	at org.python.pydev.plugin.nature.PythonNature.getVersion(PythonNature.java:856)
+	at org.python.pydev.plugin.nature.PythonNature.getGrammarVersion(PythonNature.java:1221)
+	at org.python.pydev.editor.PyEdit.getGrammarVersion(PyEdit.java:1532)
+	at org.python.pydev.editor.PyEdit$7.getGrammarVersion(PyEdit.java:1561)
+	at org.python.pydev.parser.PyParser.reparseDocument(PyParser.java:293)
+	at org.python.pydev.parser.PyParser.reparseDocument(PyParser.java:1)
+	at org.python.pydev.shared_core.parsing.ParserScheduler.reparseDocument(ParserScheduler.java:162)
+	at org.python.pydev.shared_core.parsing.ParsingThread.run(ParsingThread.java:54)
+
+!ENTRY org.eclipse.ui.ide 4 4 2023-04-17 18:58:03.087
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:205)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doPaint1(MinimapOverviewRuler.java:581)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler.doubleBufferPaint(CopiedOverviewRuler.java:654)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doubleBufferPaint(MinimapOverviewRuler.java:473)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler$3.paintControl(CopiedOverviewRuler.java:556)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1627)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4810)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5010)
+	at org.eclipse.swt.internal.win32.OS.UpdateWindow(Native Method)
+	at org.eclipse.swt.widgets.Decorations.setVisible(Decorations.java:1291)
+	at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:2064)
+	at org.eclipse.swt.widgets.Shell.open(Shell.java:1295)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.postProcess(WBWRenderer.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1082)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY org.eclipse.ui.ide 4 4 2023-04-17 18:58:03.101
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:205)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doPaint1(MinimapOverviewRuler.java:581)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler.doubleBufferPaint(CopiedOverviewRuler.java:654)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doubleBufferPaint(MinimapOverviewRuler.java:473)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler$3.paintControl(CopiedOverviewRuler.java:556)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1627)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4810)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5010)
+	at org.eclipse.swt.internal.win32.OS.RedrawWindow(Native Method)
+	at org.eclipse.swt.widgets.Control.update(Control.java:4597)
+	at org.eclipse.swt.widgets.Control.update(Control.java:4590)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler.redraw(CopiedOverviewRuler.java:826)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler$1.paintControl(MinimapOverviewRuler.java:445)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1536)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4810)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5010)
+	at org.eclipse.swt.internal.win32.OS.UpdateWindow(Native Method)
+	at org.eclipse.swt.widgets.Decorations.setVisible(Decorations.java:1291)
+	at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:2064)
+	at org.eclipse.swt.widgets.Shell.open(Shell.java:1295)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.postProcess(WBWRenderer.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1082)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-04-17 18:58:03.210
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\larry'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:58:03.258
+!MESSAGE Interpreter: Default not found
+!STACK 0
+org.python.pydev.core.MisconfigurationException: Interpreter: Default not found
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getInterpreterInfo(AbstractInterpreterManager.java:409)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getBuiltinMod(AbstractInterpreterManager.java:138)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getBuiltinCompletions(AbstractInterpreterManager.java:112)
+	at org.python.pydev.plugin.nature.PythonNature.getBuiltinCompletions(PythonNature.java:1170)
+	at org.python.pydev.ast.codecompletion.revisited.AbstractASTManager.getBuiltinComps(AbstractASTManager.java:1938)
+	at org.python.pydev.ast.codecompletion.revisited.AbstractASTManager.getBuiltinCompletions(AbstractASTManager.java:1926)
+	at com.python.pydev.analysis.scopeanalysis.AbstractScopeAnalyzerVisitor.<init>(AbstractScopeAnalyzerVisitor.java:158)
+	at com.python.pydev.analysis.visitors.OccurrencesVisitor.<init>(OccurrencesVisitor.java:106)
+	at com.python.pydev.analysis.OccurrencesAnalyzer.analyzeDocument(OccurrencesAnalyzer.java:54)
+	at com.python.pydev.analysis.additionalinfo.builders.AnalysisBuilderRunnable.doAnalysis(AnalysisBuilderRunnable.java:333)
+	at com.python.pydev.analysis.additionalinfo.builders.AbstractAnalysisBuilderRunnable.run(AbstractAnalysisBuilderRunnable.java:164)
+	at org.python.pydev.core.concurrency.RunnableAsJobsPoolThread$1.run(RunnableAsJobsPoolThread.java:140)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2023-04-17 18:58:54.816 -----------------------------------------------
+eclipse.buildId=4.22.0.I20211124-1800
+java.version=17.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2023-04-17 18:59:08.827
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-17 18:59:08.827
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2d2133fd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@58a7a58d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2023-04-17 18:59:08.827
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d8522ff,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1c9975a8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:59:10.831
+!MESSAGE Python not configured.
+!STACK 0
+org.python.pydev.core.NotConfiguredInterpreterException: Python not configured.
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getDefaultInterpreterInfo(AbstractInterpreterManager.java:247)
+	at org.python.pydev.plugin.nature.PythonNature.getProjectInterpreter(PythonNature.java:1364)
+	at org.python.pydev.plugin.nature.PythonNature.getVersionAndError(PythonNature.java:897)
+	at org.python.pydev.plugin.nature.PythonNature.getVersion(PythonNature.java:856)
+	at org.python.pydev.plugin.nature.PythonNature.getGrammarVersion(PythonNature.java:1221)
+	at org.python.pydev.editor.PyEdit.getGrammarVersion(PyEdit.java:1532)
+	at org.python.pydev.editor.PyEdit$7.getGrammarVersion(PyEdit.java:1561)
+	at org.python.pydev.parser.PyParser.reparseDocument(PyParser.java:293)
+	at org.python.pydev.parser.PyParser.reparseDocument(PyParser.java:1)
+	at org.python.pydev.shared_core.parsing.ParserScheduler.reparseDocument(ParserScheduler.java:162)
+	at org.python.pydev.shared_core.parsing.ParsingThread.run(ParsingThread.java:54)
+
+!ENTRY org.eclipse.egit.ui 2 0 2023-04-17 18:59:12.232
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\larry'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.python.pydev.shared_core 4 4 2023-04-17 18:59:12.472
+!MESSAGE Interpreter: Default not found
+!STACK 0
+org.python.pydev.core.MisconfigurationException: Interpreter: Default not found
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getInterpreterInfo(AbstractInterpreterManager.java:409)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getBuiltinMod(AbstractInterpreterManager.java:138)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getBuiltinCompletions(AbstractInterpreterManager.java:112)
+	at org.python.pydev.plugin.nature.PythonNature.getBuiltinCompletions(PythonNature.java:1170)
+	at org.python.pydev.ast.codecompletion.revisited.AbstractASTManager.getBuiltinComps(AbstractASTManager.java:1938)
+	at org.python.pydev.ast.codecompletion.revisited.AbstractASTManager.getBuiltinCompletions(AbstractASTManager.java:1926)
+	at com.python.pydev.analysis.scopeanalysis.AbstractScopeAnalyzerVisitor.<init>(AbstractScopeAnalyzerVisitor.java:158)
+	at com.python.pydev.analysis.visitors.OccurrencesVisitor.<init>(OccurrencesVisitor.java:106)
+	at com.python.pydev.analysis.OccurrencesAnalyzer.analyzeDocument(OccurrencesAnalyzer.java:54)
+	at com.python.pydev.analysis.additionalinfo.builders.AnalysisBuilderRunnable.doAnalysis(AnalysisBuilderRunnable.java:333)
+	at com.python.pydev.analysis.additionalinfo.builders.AbstractAnalysisBuilderRunnable.run(AbstractAnalysisBuilderRunnable.java:164)
+	at org.python.pydev.core.concurrency.RunnableAsJobsPoolThread$1.run(RunnableAsJobsPoolThread.java:140)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.ide 4 4 2023-04-17 18:59:19.268
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:205)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doPaint1(MinimapOverviewRuler.java:581)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler.doubleBufferPaint(CopiedOverviewRuler.java:654)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doubleBufferPaint(MinimapOverviewRuler.java:473)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler$3.paintControl(CopiedOverviewRuler.java:556)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1627)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4810)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5010)
+	at org.eclipse.swt.internal.win32.OS.UpdateWindow(Native Method)
+	at org.eclipse.swt.widgets.Decorations.setVisible(Decorations.java:1291)
+	at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:2064)
+	at org.eclipse.swt.widgets.Shell.open(Shell.java:1295)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.postProcess(WBWRenderer.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1082)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY org.eclipse.ui.ide 4 4 2023-04-17 18:59:19.270
+!MESSAGE Not properly disposed SWT resource
+!STACK 0
+java.lang.Error: SWT Resource was not properly disposed
+	at org.eclipse.swt.graphics.Resource.initNonDisposeTracking(Resource.java:172)
+	at org.eclipse.swt.graphics.Resource.<init>(Resource.java:120)
+	at org.eclipse.swt.graphics.Image.<init>(Image.java:205)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doPaint1(MinimapOverviewRuler.java:581)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler.doubleBufferPaint(CopiedOverviewRuler.java:654)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler.doubleBufferPaint(MinimapOverviewRuler.java:473)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler$3.paintControl(CopiedOverviewRuler.java:556)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1627)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4810)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5010)
+	at org.eclipse.swt.internal.win32.OS.RedrawWindow(Native Method)
+	at org.eclipse.swt.widgets.Control.update(Control.java:4597)
+	at org.eclipse.swt.widgets.Control.update(Control.java:4590)
+	at org.python.pydev.overview_ruler.CopiedOverviewRuler.redraw(CopiedOverviewRuler.java:826)
+	at org.python.pydev.overview_ruler.MinimapOverviewRuler$1.paintControl(MinimapOverviewRuler.java:445)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1060)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1069)
+	at org.eclipse.swt.widgets.Composite.WM_PAINT(Composite.java:1536)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4810)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5010)
+	at org.eclipse.swt.internal.win32.OS.UpdateWindow(Native Method)
+	at org.eclipse.swt.widgets.Decorations.setVisible(Decorations.java:1291)
+	at org.eclipse.swt.widgets.Shell.setVisible(Shell.java:2064)
+	at org.eclipse.swt.widgets.Shell.open(Shell.java:1295)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.postProcess(WBWRenderer.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1082)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1045)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)

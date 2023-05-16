@@ -1,0 +1,33 @@
+package com.mountain.game;
+
+public class rocks {
+
+	// ***************************************************************************************************************************************************************************************
+    // Class                   :    Rocks
+    //
+    // Class  parameters       :    none 
+    // 
+    // Method return           :    void
+    //
+    // Synopsis                :    This class has all methods, parameters relevant to the rocks in the game
+    //                              
+    // Modifications           :    
+    //                              Date           Developer              Notes
+    //                             ------         -----------            -------
+    //                            2022-11-17      LARRY KEMMO           Initial setup   
+    //                              Date           Developer              Notes
+    //                             ------         -----------            ------- 
+    //                            2022-11-17      LARRY KEMMO           Addition of side comments
+    //
+    // *****************************************************************************************************************************************************************************************
+
+    public  rect;  // rect variable declaration
+    public int Speed;     // Speed variable declaration
+    public Texture texture;   // texture variable declaration
+    private Random random;  // random variable declaration
+    private Random rand;    // rand variable declaration
+	
+	public rocks() {
+		
+	}
+}

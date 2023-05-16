@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.SpriteBatch"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g3d.particles.influencers.ColorInfluencer.Random"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.BitmapFont"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Color"/>
+    <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.GlyphLayout"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+</qualifiedTypeNameHistroy>
